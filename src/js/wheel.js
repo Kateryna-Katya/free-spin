@@ -1,15 +1,16 @@
 const wheel = document.getElementById('wheel');
 const button = document.getElementById('spinBtn');
+const popup = document.getElementById('winPopup');
 
 const sectorAngle = 360 / 6;
 
 let spinCount = 0;
 let currentRotation = 0;
 let spinning = false;
+let lastLogicalSector = null;
 
 const pointerOffset = 90;
 
-// мапа: номер сектора з ТЗ → фактичний сектор у SVG
 const sectorMap = {
     1: 3,
     4: 0,
@@ -28,6 +29,8 @@ button.addEventListener("click", () => {
     } else {
         logicalSector = 5;
     }
+
+    lastLogicalSector = logicalSector;
 
     const targetIndex = sectorMap[logicalSector];
 
@@ -52,4 +55,10 @@ button.addEventListener("click", () => {
 
 wheel.addEventListener("transitionend", () => {
     spinning = false;
+
+    if (lastLogicalSector === 5) {
+        setTimeout(() => {
+            popup.classList.add('is-open');
+        }, 400);
+    }
 });
