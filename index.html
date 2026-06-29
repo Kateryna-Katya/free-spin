@@ -9,7 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>JOKER's coins</title>
     <script type="module" crossorigin src="/free-spin/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/free-spin/assets/index-mHiM2rzu.css">
+    <link rel="stylesheet" crossorigin href="/free-spin/assets/index-DBK-J75q.css">
   </head>
   <body>
 
@@ -18,21 +18,112 @@
       <!-- Loads the specified .html file -->
       <section class="wheel-section">
 
-<h1 class="visually-hidden">JOKER's coins</h1>
-<img src="/free-spin/assets/logo-CCpGkGVG.png" alt="JOKER's coins" loading="lazy">
-    <div class="wheel-container">
+    <h1 class="visually-hidden">
+        JOKER'S COINS
+    </h1>
 
-        <div class="pointer"></div>
+    <img class="wheel-logo" src="/free-spin/assets/logo-CCpGkGVG.png" alt="JOKER'S COINS" loading="lazy">
 
-        <div class="wheel" id="wheel">
-            <div class="wheel-center"></div>
-        </div>
+<div class="wheel-container">
+    <div class="pointer"></div>
+
+    <div class="wheel" id="wheel">
+        <svg class="wheel-svg" viewBox="0 0 400 400">
+            <defs>
+                <radialGradient id="gold" cx="35%" cy="25%">
+                    <stop offset="0%" stop-color="#fff7a8" />
+                    <stop offset="45%" stop-color="#ffcf2f" />
+                    <stop offset="100%" stop-color="#8a4b00" />
+                </radialGradient>
+
+                <linearGradient id="orangeSector" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffb000" />
+                    <stop offset="100%" stop-color="#ff3d00" />
+                </linearGradient>
+
+                <linearGradient id="yellowSector" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#fff36a" />
+                    <stop offset="100%" stop-color="#ff9900" />
+                </linearGradient>
+
+                <filter id="shadow">
+                    <feDropShadow dx="0" dy="6" stdDeviation="5" flood-opacity=".45" />
+                </filter>
+            </defs>
+
+            <circle cx="200" cy="200" r="190" fill="url(#gold)" filter="url(#shadow)" />
+            <circle cx="200" cy="200" r="165" fill="#5a1300" />
+
+            <!-- sectors -->
+            <path d="M200 200 L365 200 A165 165 0 0 1 282.5 342.89 Z" fill="url(#orangeSector)" />
+            <path d="M200 200 L282.5 342.89 A165 165 0 0 1 117.5 342.89 Z" fill="url(#yellowSector)" />
+            <path d="M200 200 L117.5 342.89 A165 165 0 0 1 35 200 Z" fill="url(#orangeSector)" />
+            <path d="M200 200 L35 200 A165 165 0 0 1 117.5 57.11 Z" fill="url(#yellowSector)" />
+            <path d="M200 200 L117.5 57.11 A165 165 0 0 1 282.5 57.11 Z" fill="url(#orangeSector)" />
+            <path d="M200 200 L282.5 57.11 A165 165 0 0 1 365 200 Z" fill="url(#yellowSector)" />
+
+            <!-- dividers -->
+            <g stroke="url(#gold)" stroke-width="8" stroke-linecap="round">
+                <line x1="200" y1="200" x2="365" y2="200" />
+                <line x1="200" y1="200" x2="282.5" y2="342.89" />
+                <line x1="200" y1="200" x2="117.5" y2="342.89" />
+                <line x1="200" y1="200" x2="35" y2="200" />
+                <line x1="200" y1="200" x2="117.5" y2="57.11" />
+                <line x1="200" y1="200" x2="282.5" y2="57.11" />
+            </g>
+
+            <!-- border rings -->
+            <circle cx="200" cy="200" r="180" fill="none" stroke="#fff6a8" stroke-width="6" />
+            <circle cx="200" cy="200" r="165" fill="none" stroke="#7a3b00" stroke-width="8" />
+            <circle cx="200" cy="200" r="74" fill="none" stroke="url(#gold)" stroke-width="8" />
+
+            <!-- texts -->
+            <g class="wheel-text">
+                <text transform="translate(210 200) rotate(30) translate(105 0) rotate(-30)">
+                    <tspan x="0" y="-8">¡Inténtalo</tspan>
+                    <tspan x="0" y="12">de nuevo!</tspan>
+                </text>
+                
+                <text transform="translate(200 200) rotate(90) translate(105 0) rotate(-90)">
+                    <tspan x="0" y="6">425%</tspan>
+                </text>
+                
+                <text transform="translate(200 200) rotate(150) translate(105 0) rotate(-150)">
+                    <tspan x="0" y="-8">100% +</tspan>
+                    <tspan x="0" y="12">125 FS</tspan>
+                </text>
+                
+                <text transform="translate(200 200) rotate(210) translate(105 0) rotate(-210)">
+                    <tspan x="0" y="-8">¡Inténtalo</tspan>
+                    <tspan x="0" y="12">de nuevo!</tspan>
+                </text>
+                
+                <text transform="translate(200 200) rotate(270) translate(105 0) rotate(-270)">
+                    <tspan x="0" y="6">250 FS</tspan>
+                </text>
+                
+                <text transform="translate(200 200) rotate(330) translate(105 0) rotate(-330)">
+                    <tspan x="0" y="6">100%</tspan>
+                </text>
+            </g>
+
+            <!-- highlights -->
+            <ellipse cx="150" cy="90" rx="95" ry="35" fill="rgba(255,255,255,.28)" transform="rotate(-25 150 90)" />
+
+            <!-- center -->
+            <circle cx="200" cy="200" r="58" fill="url(#gold)" stroke="#fff6a8" stroke-width="6" />
+            <circle cx="200" cy="200" r="28" fill="#ffb000" />
+        </svg>
+    </div>
+</div>
+
+    <div class="spin-wrapper">
+
+        <button class="spin-btn" id="spinBtn" type="button">
+            SPIN
+        </button>
 
     </div>
-
-    <button class="spin-btn" id="spinBtn">
-        SPIN
-    </button>
 
 </section>
     </main>
