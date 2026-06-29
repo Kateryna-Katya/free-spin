@@ -13,31 +13,98 @@
     background: url("/img/back/mob.png") no-repeat center bottom / cover;
 }
 
+/* ---------- Hidden ---------- */
+
 .visually-hidden {
     position: absolute;
+
     width: 1px;
     height: 1px;
+
     margin: -1px;
     padding: 0;
+
     overflow: hidden;
+
     clip: rect(0 0 0 0);
+
     white-space: nowrap;
     border: 0;
 }
+
+/* ---------- Logo ---------- */
 
 .wheel-logo {
     width: 300px;
     max-width: 90%;
 }
 
+/* ---------- Wheel ---------- */
+
 .wheel-container {
     position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
 }
+
+/* Glow behind wheel */
+
+.wheel-container::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 430px;
+    height: 430px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 245, 120, .95) 0%,
+            rgba(255, 180, 0, .7) 30%,
+            rgba(255, 70, 0, .45) 55%,
+            rgba(255, 0, 0, .18) 75%,
+            transparent 100%);
+
+    filter: blur(45px);
+
+    animation: wheelGlow 1.8s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+@keyframes wheelGlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(.92);
+        opacity: .65;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+/* ---------- Pointer ---------- */
 
 .pointer {
     position: absolute;
-    top: -25px;
+
+    top: -22px;
     left: 50%;
+
     transform: translateX(-50%);
 
     width: 0;
@@ -45,151 +112,238 @@
 
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 40px solid #fff;
+    border-top: 38px solid #fff;
 
-    z-index: 10;
+    filter:
+        drop-shadow(0 0 10px rgba(255, 255, 255, .9));
+
+    z-index: 20;
 }
 
+/* ---------- SVG Wheel ---------- */
+
 .wheel {
+    position: relative;
+
     width: 340px;
     height: 340px;
+
     border-radius: 50%;
 
+    z-index: 2;
+
     transition: transform 5s cubic-bezier(.17, .67, .21, 1);
+
+    filter:
+        drop-shadow(0 0 12px rgba(255, 210, 0, .7)) drop-shadow(0 0 40px rgba(255, 130, 0, .35)) drop-shadow(0 18px 30px rgba(0, 0, 0, .55));
 }
 
 .wheel-svg {
     width: 100%;
     height: 100%;
+
     display: block;
-    overflow: visible;
 }
 
+/* ---------- Wheel text ---------- */
+
 .wheel-text text {
-    text-anchor: middle;
+
     font-size: 18px;
     font-weight: 900;
+
     fill: #fff;
 
+    text-anchor: middle;
+
     paint-order: stroke;
-    stroke: rgba(0, 0, 0, .7);
-    stroke-width: 4px;
+
+    stroke: rgba(0, 0, 0, .75);
+    stroke-width: 4;
+
     stroke-linejoin: round;
 }
 
+/* ---------- Button ---------- */
+
 .spin-btn {
-    padding: 16px 50px;
+
+    padding: 16px 54px;
+
     border: none;
-    border-radius: 50px;
+    border-radius: 999px;
+
     cursor: pointer;
 
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
+
     color: #fff;
 
-    background: linear-gradient(180deg, #ffdc55, #ff9100);
+    background:
+        linear-gradient(180deg,
+            #ffe870,
+            #ff9600);
 
-    box-shadow: 0 8px 20px rgba(255, 145, 0, .45);
-    transition: .2s;
+    box-shadow:
+        0 8px 18px rgba(255, 145, 0, .45),
+        inset 0 2px 3px rgba(255, 255, 255, .5);
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
 }
 
 .spin-btn:hover {
+
     transform: scale(1.05);
+
+    box-shadow:
+        0 0 22px rgba(255, 190, 0, .8),
+        0 12px 24px rgba(255, 120, 0, .55);
+
 }
 
 .spin-btn:active {
+
     transform: scale(.96);
+
 }
 
-/* POPUP */
+/* ---------- Popup ---------- */
 
 .win-popup {
+
     position: fixed;
+
     inset: 0;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 20px;
 
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, .8);
 
     opacity: 0;
     visibility: hidden;
+
     pointer-events: none;
 
-    transition: .3s;
+    transition: .35s;
 
     z-index: 100;
 }
 
 .win-popup.is-open {
+
     opacity: 1;
     visibility: visible;
+
     pointer-events: auto;
+
 }
 
 .win-popup__content {
+
     width: 100%;
     max-width: 340px;
 
-    padding: 32px 24px;
+    padding: 34px 24px;
+
+    border-radius: 24px;
+
+    border: 3px solid #ffcf2f;
 
     text-align: center;
 
-    border-radius: 24px;
-    border: 3px solid #ffcf2f;
+    background:
+        radial-gradient(circle,
+            #ff9300,
+            #7b0000);
 
-    background: radial-gradient(circle, #ff9300, #7b0000);
-
-    box-shadow: 0 0 30px rgba(255, 207, 47, .8);
+    box-shadow:
+        0 0 40px rgba(255, 207, 47, .8);
 }
 
 .win-popup__content h2 {
+
     margin-bottom: 12px;
 
-    font-size: 32px;
+    font-size: 34px;
+
     color: #fff;
 }
 
 .win-popup__content p {
-    margin-bottom: 24px;
+
+    margin-bottom: 28px;
 
     font-size: 24px;
     font-weight: 700;
+
     color: #ffdc55;
 }
 
 .win-popup__btn {
-    display: inline-flex;
-    align-items: center;
+
+    display: flex;
+
     justify-content: center;
+    align-items: center;
 
-    min-width: 220px;
-    min-height: 56px;
+    width: 100%;
+    min-height: 58px;
 
-    border-radius: 50px;
+    border-radius: 999px;
+
+    text-decoration: none;
 
     font-size: 20px;
     font-weight: 800;
 
     color: #fff;
-    text-decoration: none;
 
-    background: linear-gradient(180deg, #ffdc55, #ff9100);
+    background:
+        linear-gradient(180deg,
+            #ffe25d,
+            #ff9300);
 
-    box-shadow: 0 8px 20px rgba(255, 145, 0, .5);
+    box-shadow:
+        0 8px 18px rgba(255, 145, 0, .45);
+
+    transition: .25s;
 }
 
-@media only screen and (min-width: 1440px) {
+.win-popup__btn:hover {
+
+    transform: scale(1.03);
+
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width:1440px) {
+
     .wheel-logo {
+
         width: 600px;
-        height: auto;
+
     }
 
     .wheel {
-        width: 420px;
-        height: 420px;
+
+        width: 430px;
+        height: 430px;
+
     }
+
+    .wheel-container::before {
+
+        width: 520px;
+        height: 520px;
+
+    }
+
 }
