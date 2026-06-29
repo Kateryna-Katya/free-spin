@@ -82,13 +82,19 @@
 
     border-radius: 50%;
 
-    background:
-        repeating-conic-gradient(transparent 0deg 59deg,
-            rgba(255, 255, 255, .9) 59deg 60deg);
+background:
+        repeating-conic-gradient(transparent 0deg 58.5deg,
 
-    pointer-events: none;
+            #fff 58.5deg,
+
+            #ffd74a 59deg,
+
+            #8f5d00 60deg,
+
+            transparent 61deg);
 
     z-index: 1;
+    pointer-events: none;
 }
 
 .wheel-center {
